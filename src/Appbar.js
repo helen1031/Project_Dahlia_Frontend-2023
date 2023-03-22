@@ -8,6 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function Appbar() {
   const [auth, setAuth] = React.useState(true);
@@ -35,7 +36,7 @@ function Appbar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            유임숙씨 다알리아
+            <Link to="/">유임숙씨 다알리아</Link>
           </Typography>
           {auth && (
             <div>

@@ -5,11 +5,12 @@ import {
   IconButton,
   Button,
 } from "@mui/material";
+import Appbar from "./Appbar";
 import { PhotoCamera } from "@mui/icons-material";
 import React, { useState } from "react";
 import { postCreate } from "./service/ApiService";
 
-const PostCreate = (props) => {
+const FlowerPostCreate = (props) => {
   // Backend enum에서 가져와야 함
   const colors = [
     {
@@ -98,6 +99,7 @@ const PostCreate = (props) => {
 
   return (
     <div className="PostCreate">
+      <Appbar></Appbar>
       <h3>다알리아 등록하기</h3>
       <Container style={{ margin: 10 }}>
         <form noValidate onSubmit={handleSubmit}>
@@ -185,4 +187,4 @@ const PostCreate = (props) => {
   );
 };
 
-export default PostCreate;
+export default FlowerPostCreate;

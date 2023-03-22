@@ -49,8 +49,18 @@ export function signup(userDTO) {
   return call("/auth/signup", "POST", userDTO);
 }
 
+export function socialLogin(provider) {
+  const frontendUrl = window.location.protocol + "//" + window.location.host;
+  window.location.href =
+    API_BASE_URL +
+    "/auth/authorize/" +
+    provider +
+    "?redirect_url=" +
+    frontendUrl;
+}
+
 export function postCreate(postDTO) {
-  return call("/post/create", "POST", postDTO).then((response) => {
+  return call("/flower-post/create", "POST", postDTO).then((response) => {
     console.log("response: ", response);
     alert("게시물 등록 ");
   });

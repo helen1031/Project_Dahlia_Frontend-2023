@@ -1,6 +1,6 @@
 import Appbar from "./Appbar";
-import Post from "./Post";
-import PostCreate from "./PostCreate";
+import FlowerPost from "./FlowerPost";
+import FlowerPostCreate from "./FlowerPostCreate";
 import React, { useEffect, useState } from "react";
 import { List, Paper, Fab } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
@@ -12,7 +12,7 @@ function App() {
   const [loading, setLoading] = useState([true]);
 
   useEffect(() => {
-    call("/post", "GET", null).then((response) => {
+    call("/flower-post", "GET", null).then((response) => {
       setItems(response.data);
       setLoading(false);
     });
@@ -21,9 +21,11 @@ function App() {
   let posts = items.length > 0 && (
     <Paper style={{ margin: 20 }}>
       <List>
-        {items.map((item) => (
-          <Post item={item} key={item.id} />
-        ))}
+        <Link to="/flower-post/detail">
+          {items.map((item) => (
+            <FlowerPost item={item} key={item.id} />
+          ))}
+        </Link>
       </List>
     </Paper>
   );
@@ -43,7 +45,7 @@ function App() {
     <div>
       <Appbar />
       <div className="posts">{posts}</div>
-      <Link to="/post/create">
+      <Link to="/flower-post/create">
         <Fab sx={fabStyle} color="primary" aria-label="add">
           <AddIcon />
         </Fab>

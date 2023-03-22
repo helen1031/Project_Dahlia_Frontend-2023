@@ -1,6 +1,6 @@
 import { Container, Grid, TextField, Typography, Button } from "@mui/material";
 import React from "react";
-import { signin } from "./service/ApiService";
+import { signin, socialLogin } from "./service/ApiService";
 import { Link } from "react-router-dom";
 
 function Login() {
@@ -11,6 +11,11 @@ function Login() {
     const password = data.get("password");
 
     signin({ username: username, password: password });
+  };
+
+  const handleSocialLogin = (provider) => {
+    //console.log(provider);
+    socialLogin(provider);
   };
 
   return (
@@ -51,6 +56,16 @@ function Login() {
           <Grid item xs={12}>
             <Button type="submit" fullWidth variant="contained" color="primary">
               로그인
+            </Button>
+          </Grid>
+          <Grid item xs={12}>
+            <Button
+              onClick={() => handleSocialLogin("kakao")}
+              fullWidth
+              variant="contained"
+              style={{ backgroundColor: "#FEE501" }}
+            >
+              카카오로 로그인하기
             </Button>
           </Grid>
           <Grid item>

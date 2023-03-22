@@ -2,9 +2,11 @@ import "./App.css";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import App from "./App";
-import PostCreate from "./PostCreate";
+import FlowerPostCreate from "./FlowerPostCreate";
+import FlowerPostDetail from "./FlowerPostDetail";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SocialLogin from "./SocialLogin";
 
 function AppRouter() {
   return (
@@ -13,7 +15,9 @@ function AppRouter() {
         <Route path={"/"} element={<App />} />
         <Route path={"login"} element={<Login />} />
         <Route path={"signup"} element={<SignUp />} />
-        <Route path={"post/create"} element={<PostCreate />} />
+        <Route path={"sociallogin"} element={<SocialLogin />} />
+        <Route path={"flower-post/create"} element={<FlowerPostCreate />} />
+        <Route path={"flower-post/detail"} element={<FlowerPostDetail />} />
       </Routes>
     </BrowserRouter>
   );

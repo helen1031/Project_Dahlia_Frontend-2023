@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 
-const Post = (props) => {
+const FlowerPost = (props) => {
   const [item, setItem] = useState(props.item);
 
   // UI 참고) https://mui.com/material-ui/react-list/
@@ -26,4 +26,4 @@ const Post = (props) => {
   );
 };
 
-export default Post;
+export default FlowerPost;
