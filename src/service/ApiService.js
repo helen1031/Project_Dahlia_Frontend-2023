@@ -59,6 +59,11 @@ export function socialLogin(provider) {
     frontendUrl;
 }
 
+export function signout() {
+  localStorage.setItem("ACCESS_TOKEN", null);
+  window.location.href = "/login";
+}
+
 export function postCreate(postDTO) {
   return call("/flower-post/create", "POST", postDTO).then((response) => {
     console.log("response: ", response);

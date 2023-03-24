@@ -9,6 +9,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { signout } from "./service/ApiService";
 
 function Appbar() {
   const [auth, setAuth] = React.useState(true);
@@ -66,7 +67,7 @@ function Appbar() {
                 onClose={handleClose}
               >
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={signout}>Logout</MenuItem>
               </Menu>
             </div>
           )}

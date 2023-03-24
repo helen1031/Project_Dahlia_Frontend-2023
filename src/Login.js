@@ -68,6 +68,16 @@ function Login() {
               카카오로 로그인하기
             </Button>
           </Grid>
+          <Grid item xs={12}>
+            <Button
+              onClick={() => handleSocialLogin("naver")}
+              fullWidth
+              variant="contained"
+              style={{ backgroundColor: "#50CA7E" }}
+            >
+              네이버로 로그인하기
+            </Button>
+          </Grid>
           <Grid item>
             <Link to="/signup" variant="body2">
               계정이 없습니까? 여기서 가입하세요
